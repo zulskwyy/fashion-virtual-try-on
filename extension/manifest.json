@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Fashion Virtual Try-On",
+  "version": "0.10.7",
+  "description": "Send a fashion image from a webpage to the Fashion Virtual Try-On camera flow.",
+  "permissions": ["contextMenus", "tabs", "storage"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_title": "Fashion Virtual Try-On" }
+}

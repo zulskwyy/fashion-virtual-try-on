@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Fashion Virtual Try-On</title>
+  <link rel="stylesheet" href="/styles.css?v=10.9">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">FASHION VIRTUAL TRY-ON · BUILD 10.9</p>
+        <h1>See the item on you.</h1>
+        <p class="lede">Bring a clothing image from a webpage into the camera, then generate a realistic try-on from your current frame.</p>
+      </div>
+      <div class="pill" id="modePill">Waiting</div>
+    </header>
+
+    <section class="workspace">
+      <div class="stage-card">
+        <div class="stage">
+          <video id="camera" autoplay playsinline muted></video>
+          <canvas id="snapshot" hidden></canvas>
+          <div class="stageHint" id="stageHint">Start your camera to begin.</div>
+          <div class="resultLayer" id="resultLayer" hidden>
+            <img id="resultImage" alt="Generated virtual try-on result">
+            <div class="resultActions">
+              <button id="saveResult" class="accent small">Save photo</button>
+              <button id="tryAnother" class="secondary small">Try another garment</button>
+              <button id="closeResult" class="ghost small">Back to camera</button>
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="startCamera" class="primary">Start camera</button>
+          <button id="capture" class="secondary" disabled>Capture frame</button>
+          <button id="generate" class="accent" disabled>Generate realistic try-on</button>
+        </div>
+        <div class="status" id="status">Ready.</div>
+      </div>
+
+      <aside class="side-card">
+        <section>
+          <p class="sectionLabel">Selected item</p>
+          <div class="garmentBox">
+            <img id="garmentPreview" alt="Selected garment">
+            <div id="garmentEmpty" class="muted">Pick an image from Google Images or choose one below.</div>
+          </div>
+          <div id="deviceHelp" class="deviceHelp" hidden></div>
+          <div class="metaRow">
+            <select id="garmentType">
+              <option value="top">Top / T-shirt</option>
+              <option value="hoodie">Hoodie</option>
+              <option value="shirt">Shirt</option>
+              <option value="jacket">Jacket</option>
+              <option value="dress">Dress</option>
+              <option value="bottom">Pants / Bottom</option>
+            </select>
+            <input id="garmentDescription" placeholder="e.g. black oversized hoodie">
+          </div>
+          <label class="filePick">
+            <span id="garmentFileLabel">Choose garment image</span>
+            <input id="garmentFile" type="file" accept="image/*">
+          </label>
+          <button id="changeGarment" class="secondary fullWidth" type="button">Upload another garment</button>
+        </section>
+
+        <section class="explain">
+          <p class="sectionLabel">How this prototype works</p>
+          <div class="steps">
+            <div><b>1</b><span>Select an item from a webpage.</span></div>
+            <div><b>2</b><span>Capture your current camera frame.</span></div>
+            <div><b>3</b><span>VTON generates a new image with the garment worn by you.</span></div>
+          </div>
+          <p class="fineprint">This is image-based VTON, not 60 FPS generative AR.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+  <script type="module" src="/app.js?v=10.9"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "fashion-virtual-try-on",
+  "version": "0.10.9",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@gradio/client": "2.7.0"
+  }
+}

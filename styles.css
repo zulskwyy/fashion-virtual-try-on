@@ -1,0 +1,50 @@
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f6f7f8;background:#0b0d10}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 0,#1a1f27 0,#0b0d10 42%,#070809 100%)}
+button,input,select{font:inherit}
+.shell{max-width:1180px;margin:auto;padding:40px 22px 64px}
+.hero{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:24px}
+.eyebrow,.sectionLabel{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8f98a5;margin:0 0 10px}
+h1{margin:0;font-size:clamp(34px,5vw,64px);line-height:.98;letter-spacing:-.045em}
+.lede{max-width:720px;color:#aeb5bf;line-height:1.55;font-size:16px;margin:16px 0 0}
+.pill{padding:9px 13px;border:1px solid #2a3038;border-radius:999px;color:#bfc6cf;font-size:12px;background:#111419}
+.workspace{display:grid;grid-template-columns:1.7fr 1fr;gap:18px}
+.stage-card,.side-card{background:#101318;border:1px solid #232933;border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.stage{position:relative;aspect-ratio:4/5;background:#050607;overflow:hidden}
+.stage video{display:block;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.stageHint{position:absolute;inset:auto 18px 18px 18px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);padding:12px 14px;border-radius:14px;color:#d9dde2;font-size:13px}
+.resultLayer{position:absolute;inset:0;background:#050607;display:flex;align-items:center;justify-content:center}
+.resultLayer img{width:100%;height:100%;object-fit:contain;background:#050607}
+.resultLayer .small{position:absolute;bottom:14px;right:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;padding:14px;border-top:1px solid #232933}
+button{border:0;border-radius:13px;padding:11px 14px;cursor:pointer;font-weight:700}
+button:disabled{opacity:.42;cursor:not-allowed}
+.primary{background:#f5f7fa;color:#0b0d10}.secondary,.ghost{background:#181c22;color:#dce1e6;border:1px solid #2b323d}.accent{background:#b6ff63;color:#12160f}
+.status{padding:0 14px 15px;color:#9ea7b3;font-size:12px;min-height:31px}
+.side-card{padding:18px;display:flex;flex-direction:column;gap:20px}
+.garmentBox{aspect-ratio:4/3;border-radius:18px;border:1px dashed #353c48;background:#0b0d10;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:12px}
+.garmentBox img{width:100%;height:100%;object-fit:contain;display:none}.muted{color:#7e8793;font-size:13px;text-align:center;padding:20px}
+.metaRow{display:grid;grid-template-columns:1fr;gap:9px}.metaRow select,.metaRow input,.filePick{width:100%;background:#0c0f13;color:#e9edf1;border:1px solid #29303a;border-radius:12px;padding:11px}
+.filePick{display:block;color:#aab1bb;font-size:13px;cursor:pointer;text-align:center}.filePick input{display:none}
+.explain{padding-top:2px;border-top:1px solid #252b34}
+.steps{display:grid;gap:11px}.steps div{display:flex;gap:11px;align-items:flex-start;color:#aeb5bf;font-size:13px;line-height:1.4}.steps b{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#1b2028;color:#f4f6f8;font-size:11px;flex:0 0 auto}
+.fineprint{font-size:11px;color:#727b87;line-height:1.5;margin-top:14px}
+@media(max-width:900px){.workspace{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.shell{padding-top:24px}.stage{aspect-ratio:3/4}}
+
+/* Mobile/Android camera rendering fix */
+.stage{isolation:isolate}
+.stage video#camera{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;min-width:100%;min-height:100%;visibility:visible;opacity:1;object-fit:cover;object-position:center center;background:#000}
+.stageHint{z-index:2}
+.resultLayer{z-index:3}
+.resultLayer[hidden]{display:none !important}
+
+.resultActions{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;z-index:4}
+.resultActions .small{padding:10px 12px;font-size:12px}
+.fullWidth{width:100%;margin-top:2px}
+.filePick{min-height:44px;display:flex;align-items:center;justify-content:center}
+@media(max-width:600px){.resultActions{left:10px;right:10px;bottom:10px;justify-content:center}.resultActions button{flex:1 1 auto}.stage{aspect-ratio:3/4}}
+
+.resultLayer .small{position:static}
+
+.deviceHelp{margin:10px 0 12px;padding:11px 12px;border:1px solid #29303a;border-radius:12px;background:#0c0f13;color:#8f98a5;font-size:12px;line-height:1.45}
+@media(max-width:600px){.deviceHelp{font-size:12px}}
